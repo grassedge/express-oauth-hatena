@@ -12,5 +12,12 @@
     "hatena"
   ],
   "author": "grassedge",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "oauth": "^0.9.14"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
 }
