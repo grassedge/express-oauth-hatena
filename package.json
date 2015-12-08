@@ -1,0 +1,16 @@
+{
+  "name": "express-oauth-hatena",
+  "version": "1.0.0",
+  "description": "express middleware for oauth with Hatena",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "express",
+    "oauth",
+    "hatena"
+  ],
+  "author": "grassedge",
+  "license": "ISC"
+}
