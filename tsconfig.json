@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "declaration": true,
+        "newLine": "LF"
+    },
+    "files": [
+        "./index.ts",
+        "./typings/bundle.d.ts"
+    ]
+}
