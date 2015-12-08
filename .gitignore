@@ -1,5 +1,6 @@
 index.js
 oauth-wrap.js
+oauth-wrap.d.ts
 test/*.js
 node_modules
 typings
