@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "express middleware for oauth with Hatena",
   "main": "index.js",
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "install": "dtsm install",
+    "build": "tsc -p ./"
   },
   "keywords": [
     "express",
@@ -15,9 +20,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3",
-    "oauth": "^0.9.14"
+    "oauth": "^0.9.14",
+    "typescript": "^1.7.3"
   },
   "devDependencies": {
+    "dtsm": "^0.13.0",
     "mocha": "^2.3.4"
   }
 }
