@@ -33,12 +33,12 @@ function hatenaOAuth(consumer_key: string, consumer_secret: string, opts: any) {
                 oauth_callback: url.format({
                     protocol: req.protocol,
                     host: req.get('host'),
-                    pathname: req.originalUrl.split('?')[0],
-                    query: { location: req.query.location }
+                    pathname: req.originalUrl.split('?')[0]
                 })
             });
             if (!requestToken) { }
             req.session["hatenaoauth_request_token"] = requestToken;
+            req.session["hatenaoauth_location"] = req.query.location;
             res.redirect(
                 AUTHORIZE_PATH + '?oauth_token=' +
                     encodeURIComponent(requestToken.oauth_token)
@@ -70,7 +70,8 @@ function hatenaOAuth(consumer_key: string, consumer_secret: string, opts: any) {
             }
 
             req.session['hatenaoauth_user_info'] = userInfo
-            next()
+            res.redirect(req.session['hatenaoauth_location'] || '/');
+            delete req.session['hatenaoauth_location'];
         }
     }
 }
