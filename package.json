@@ -16,15 +16,19 @@
     "oauth",
     "hatena"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hatz48/express-oauth-hatena.git"
+  },
   "author": "grassedge",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3",
-    "oauth": "^0.9.14",
-    "typescript": "^1.7.3"
+    "oauth": "^0.9.14"
   },
   "devDependencies": {
     "dtsm": "^0.13.0",
-    "mocha": "^2.3.4"
+    "express": "4.x",
+    "mocha": "^2.3.4",
+    "typescript": "^1.7.3"
   }
 }
