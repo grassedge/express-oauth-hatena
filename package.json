@@ -1,6 +1,6 @@
 {
   "name": "express-oauth-hatena",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "express middleware for oauth with Hatena",
   "main": "index.js",
   "engines": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "install": "dtsm install",
+    "prepublish": "tsc -p ./",
+    "dtsm": "dtsm install",
     "build": "tsc -p ./"
   },
   "keywords": [
