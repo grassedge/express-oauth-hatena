@@ -39,10 +39,12 @@ function hatenaOAuth(consumer_key: string, consumer_secret: string, opts: any) {
             if (!requestToken) { }
             req.session["hatenaoauth_request_token"] = requestToken;
             req.session["hatenaoauth_location"] = req.query.location;
-            res.redirect(
-                AUTHORIZE_PATH + '?oauth_token=' +
-                    encodeURIComponent(requestToken.oauth_token)
-            );
+            req.session.save(function() {
+                res.redirect(
+                    AUTHORIZE_PATH + '?oauth_token=' +
+                        encodeURIComponent(requestToken.oauth_token)
+                );
+            })
         } else {
             try {
                 var accessToken = await consumer.getOAuthAccessToken(
@@ -70,8 +72,11 @@ function hatenaOAuth(consumer_key: string, consumer_secret: string, opts: any) {
             }
 
             req.session['hatenaoauth_user_info'] = userInfo
-            res.redirect(req.session['hatenaoauth_location'] || '/');
+            const location = req.session['hatenaoauth_location'] || '/';
             delete req.session['hatenaoauth_location'];
+            req.session.save(function() {
+                res.redirect(location);
+            })
         }
     }
 }
